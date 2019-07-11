@@ -107,6 +107,7 @@ public class Kylelsm : MonoBehaviour
         Debug.Log("entre al if con:" + mov);
         if (mov!=null)
         {
+            mov = "n";
             if (mov == "hola")
             {
                 if (null != anim)
@@ -117,7 +118,6 @@ public class Kylelsm : MonoBehaviour
                     yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
                 }
             }
-
             else if (mov == "historia")
             {
                 if (null != anim)
@@ -131,7 +131,6 @@ public class Kylelsm : MonoBehaviour
                 }
 
             }
-
             else if (mov == "como_estar" || mov == "cómo_estar")
             {
                 if (null != anim)
@@ -143,7 +142,6 @@ public class Kylelsm : MonoBehaviour
 
                 }
             }
-
             else if (mov == "que" || mov == "qué")
             {
                 if (null != anim)
@@ -155,7 +153,6 @@ public class Kylelsm : MonoBehaviour
 
                 }
             }
-
             else if (mov == "hoy")
             {
                 if (null != anim)
@@ -211,7 +208,6 @@ public class Kylelsm : MonoBehaviour
 
                 }
             }
-
             else if (mov == "tema")
             {
                 if (null != anim)
@@ -938,7 +934,6 @@ public class Kylelsm : MonoBehaviour
 
                 }
             }
-         
             else if (mov == "sin traduccion")
             {
                 if (null != anim)
@@ -970,6 +965,9 @@ public class Kylelsm : MonoBehaviour
         yield return webRequest.SendWebRequest();
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
+         
+            yield return StartCoroutine(AvatarMov("n"));
+
             SSTools.ShowMessage(webRequest.error, SSTools.Position.bottom, SSTools.Time.twoSecond);
 
         }
