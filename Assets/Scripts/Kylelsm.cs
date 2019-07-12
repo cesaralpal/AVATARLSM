@@ -934,6 +934,29 @@ public class Kylelsm : MonoBehaviour
 
                 }
             }
+            else if (mov == "despues"||mov=="luego")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("despues", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+
+                }
+            }
+            else if (mov == "nosotros")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("nosotros", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+
+                }
+            }
+
             else if (mov == "sin traduccion")
             {
                 if (null != anim)
