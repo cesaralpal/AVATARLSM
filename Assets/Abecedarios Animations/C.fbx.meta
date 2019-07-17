@@ -158,7 +158,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -698,7 +698,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01c
       parentName: Left_Index_Finger_Joint_01b
       position: {x: -0.000000009536743, y: 0.022945127, z: 0.00000000461936}
-      rotation: {x: 0.00025226822, y: 0.011017176, z: 0.0228844, w: 0.99967736}
+      rotation: {x: 0.00025226825, y: 0.011017176, z: 0.022884402, w: 0.99967736}
       scale: {x: 1, y: 0.9999999, z: 1.0000001}
     - name: Left_Index_Finger_Joint_01c_end
       parentName: Left_Index_Finger_Joint_01c
@@ -708,7 +708,7 @@ ModelImporter:
     - name: Left_Middle_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: -0.0024095546, y: 0.072997175, z: 0.0018620348}
-      rotation: {x: 0.029849332, y: 0.09726319, z: -0.0622677, w: 0.9928603}
+      rotation: {x: 0.029849332, y: 0.097263195, z: -0.0622677, w: 0.9928604}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Left_Middle_Finger_Joint_01b
       parentName: Left_Middle_Finger_Joint_01a
@@ -768,12 +768,12 @@ ModelImporter:
     - name: Left_Thumb_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: 0.001944332, y: 0.049738392, z: -0.04418498}
-      rotation: {x: -0.30648735, y: -0.16775858, z: 0.1633832, w: 0.9226204}
+      rotation: {x: -0.30648738, y: -0.1677586, z: 0.16338322, w: 0.9226205}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Left_Thumb_Joint_01b
       parentName: Left_Thumb_Joint_01a
       position: {x: 0.000000028610229, y: 0.028925424, z: -0.000000035762785}
-      rotation: {x: -0.009798732, y: -0.7743922, z: -0.018179083, w: 0.6323687}
+      rotation: {x: -0.009798733, y: -0.7743922, z: -0.018179085, w: 0.6323687}
       scale: {x: 0.9999997, y: 1.0000001, z: 0.99999976}
     - name: Left_Thumb_Joint_01b_end
       parentName: Left_Thumb_Joint_01b
@@ -808,7 +808,7 @@ ModelImporter:
     - name: Right_Forearm_Joint_01
       parentName: Right_Upper_Arm_Joint_01
       position: {x: 0.00000003695488, y: 0.24097994, z: -0.000000019073486}
-      rotation: {x: -0.00122787, y: -0.3451933, z: 0.019167086, w: -0.938335}
+      rotation: {x: -0.0012278701, y: -0.34519333, z: 0.019167088, w: -0.93833506}
       scale: {x: 1, y: 0.9999998, z: 0.99999976}
     - name: Right_Wrist_Joint_01
       parentName: Right_Forearm_Joint_01

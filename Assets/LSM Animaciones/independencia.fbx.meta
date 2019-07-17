@@ -688,7 +688,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: -0.0069014165, y: 0.07312517, z: -0.018158989}
-      rotation: {x: 0.029608186, y: 0.09729037, z: -0.062280174, w: 0.9928641}
+      rotation: {x: 0.029608188, y: 0.097290374, z: -0.062280178, w: 0.99286413}
       scale: {x: 0.9999999, y: 1, z: 1}
     - name: Left_Index_Finger_Joint_01b
       parentName: Left_Index_Finger_Joint_01a
@@ -698,7 +698,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01c
       parentName: Left_Index_Finger_Joint_01b
       position: {x: 0.000000019073486, y: 0.022945156, z: -0.000000028610229}
-      rotation: {x: 0.00025227992, y: 0.011017144, z: 0.022884442, w: 0.99967736}
+      rotation: {x: 0.00025227995, y: 0.011017144, z: 0.022884443, w: 0.99967736}
       scale: {x: 0.99999994, y: 0.9999999, z: 1.0000001}
     - name: Left_Index_Finger_Joint_01c_end
       parentName: Left_Index_Finger_Joint_01c
@@ -728,7 +728,7 @@ ModelImporter:
     - name: Left_Pinky_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: 0.005579023, y: 0.06996219, z: 0.039188564}
-      rotation: {x: 0.02865814, y: 0.09740278, z: -0.062309124, w: 0.9928791}
+      rotation: {x: 0.028658142, y: 0.09740279, z: -0.062309127, w: 0.99287915}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: Left_Pinky_Finger_Joint_01b
       parentName: Left_Pinky_Finger_Joint_01a
@@ -814,7 +814,7 @@ ModelImporter:
     - name: Right_Wrist_Joint_01
       parentName: Right_Forearm_Joint_01
       position: {x: 0.000000014305114, y: 0.30775845, z: -0.00000004053116}
-      rotation: {x: 0.061810724, y: -0.7211761, z: -0.014750906, w: 0.68983096}
+      rotation: {x: 0.061810732, y: -0.72117615, z: -0.014750908, w: 0.689831}
       scale: {x: 1, y: 1.0000001, z: 0.9999999}
     - name: Right_Index_Finger_Joint_01a
       parentName: Right_Wrist_Joint_01

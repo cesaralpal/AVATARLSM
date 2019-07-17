@@ -39,7 +39,7 @@ public class Kylelsm : MonoBehaviour
         }
         btnTerminar = btnEnd.GetComponent<Button>();
         btnTerminar.onClick.AddListener(EndClass);
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
         StartCoroutine(SolicitarTraduccion());
     }
@@ -107,15 +107,14 @@ public class Kylelsm : MonoBehaviour
         Debug.Log("entre al if con:" + mov);
         if (mov!=null)
         {
-            mov = "n";
-            if (mov == "hola")
+            if (mov == "hola" || mov=="Hola")
             {
                 if (null != anim)
                 {
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
                     // play Bounce but start at a quarter of the way though
                     anim.Play("Hola", 0, 0f);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
                 }
             }
             else if (mov == "historia")
@@ -125,7 +124,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("historia", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
 
                 }
@@ -135,10 +134,11 @@ public class Kylelsm : MonoBehaviour
             {
                 if (null != anim)
                 {
+
                     // play Bounce but start at a quarter of the way though
                     anim.Play("comoestas", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length+3);
 
                 }
             }
@@ -149,7 +149,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("que", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -160,7 +160,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("hoy", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -171,7 +171,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("explicar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -182,7 +182,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("clase", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -193,7 +193,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("guerra", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -204,7 +204,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("independencia", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -215,7 +215,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("tema", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -226,7 +226,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("niño", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -237,18 +237,18 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("mujer", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "mexico")
+            else if (mov == "méxico")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("mexico", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -259,18 +259,18 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("hidalgo", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "allende")
+            else if (mov == "Allende")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("allende", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -281,7 +281,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("hombre", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -292,7 +292,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("estudiar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -303,18 +303,18 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("hacer", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "que")
+            else if (mov == "qué")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("que", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -325,7 +325,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("tema", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -336,7 +336,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("preguntar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -347,7 +347,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("esclavo", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -358,7 +358,8 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("empezar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
+
 
                 }
             }
@@ -369,7 +370,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("libro", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -380,7 +381,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("libro", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -391,7 +392,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("video", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -402,7 +403,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("no", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -413,7 +414,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("cual", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -424,7 +425,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("español", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -435,7 +436,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("llegar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -446,7 +447,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("oprimir", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -457,7 +458,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("indigena", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -468,7 +469,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("atrapar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -479,7 +480,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("salvar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -490,7 +491,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("pagina", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -501,7 +502,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("participar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -512,7 +513,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("pensar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -523,7 +524,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("muchos", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -534,7 +535,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("WalkRM", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -545,7 +546,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("leer", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -556,7 +557,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("adios", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -567,7 +568,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("buenasNoches", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -578,29 +579,29 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("buenasNoches", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "buenos_dias")
+            else if (mov == "buenos_días")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("buenosDias", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "escribir")
+            else if (mov == "escribir" || mov == "anotar")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("escribir", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -611,7 +612,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("explicar", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -622,18 +623,18 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("pasado", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "porque" || mov == "¿por_que?")
+            else if (mov == "porque")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("porque", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -644,7 +645,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("ver", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -655,7 +656,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("a", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -666,7 +667,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("b", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -675,9 +676,9 @@ public class Kylelsm : MonoBehaviour
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
-                    anim.Play("c", 0, 0f);
+                    anim.Play("letrac", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length);
 
                 }
             }
@@ -688,7 +689,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("d", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -699,7 +700,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("e", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -710,7 +711,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("f", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -720,8 +721,9 @@ public class Kylelsm : MonoBehaviour
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("g", 0, 0f);
+                   
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -732,7 +734,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("h", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -743,7 +745,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("i", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -754,7 +756,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("j", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -765,7 +767,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("k", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -776,7 +778,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("l", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -787,7 +789,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("m", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -798,7 +800,18 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("n", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
+
+                }
+            }
+            else if (mov == "ñ")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("nn", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -809,7 +822,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("o", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -820,7 +833,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("p", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -831,7 +844,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("q", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -842,7 +855,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("r", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length);
 
                 }
             }
@@ -851,9 +864,9 @@ public class Kylelsm : MonoBehaviour
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
-                    anim.Play("s", 0, 0f);
+                    anim.Play("c", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -864,7 +877,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("t", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -875,7 +888,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("u", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -886,7 +899,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("v", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -897,7 +910,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("w", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -908,7 +921,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("x", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -919,7 +932,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("y", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
@@ -930,32 +943,101 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("z", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "despues"||mov=="luego")
+            else if (mov == "después"||mov=="luego")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
                     anim.Play("despues", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
-            else if (mov == "nosotros")
+            else if (mov == "nuestro")
             {
                 if (null != anim)
                 {
                     // play Bounce but start at a quarter of the way though
-                    anim.Play("nosotros", 0, 0f);
+                    anim.Play("nuestro", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length + 3);
 
                 }
             }
+            else if (mov == "pizarrón")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("pizarron", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+                }
+            }
+            else if (mov == "poner")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("poner", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+                }
+            }
+            else if (mov == "pensar")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("pensar", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+                }
+            }
+            else if (mov == "recordar")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("recordar", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+                }
+            }
+            else if (mov == "elegir")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("elegir" +
+                        "", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+                }
+            }
+            else if (mov == "cara"||mov == "rostro")
+            {
+                if (null != anim)
+                {
+                    // play Bounce but start at a quarter of the way though
+                    anim.Play("cara", 0, 0f);
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    yield return new WaitForSeconds(m_CurrentClipInfo.Length+3);
+
+                }
+            }
+
+
 
             else if (mov == "sin traduccion")
             {
@@ -965,7 +1047,7 @@ public class Kylelsm : MonoBehaviour
                     // play Bounce but start at a quarter of the way though
                     anim.Play("sin traduccion", 0, 0f);
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                    yield return new WaitForSeconds(m_CurrentClipInfo.Length);
                     Debug.Log("salir");
 
                 }
@@ -989,7 +1071,6 @@ public class Kylelsm : MonoBehaviour
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
          
-            yield return StartCoroutine(AvatarMov("n"));
 
             SSTools.ShowMessage(webRequest.error, SSTools.Position.bottom, SSTools.Time.twoSecond);
 
@@ -999,6 +1080,8 @@ public class Kylelsm : MonoBehaviour
             if (webRequest.downloadHandler.isDone)
             {
                 AvatarWords words = JsonUtility.FromJson<AvatarWords>(webRequest.downloadHandler.text);
+                Debug.Log(words.traduccion);
+
                 yield return StartCoroutine(Movimientos(words.traduccion));
             }
         }
