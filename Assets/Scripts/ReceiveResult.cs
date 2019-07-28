@@ -59,7 +59,7 @@ public class ReceiveResult : MonoBehaviour {
         SSTools.ShowMessage("entre al resquest", SSTools.Position.bottom, SSTools.Time.twoSecond);
 
 
-        UnityWebRequest www = UnityWebRequest.Post("http://137.135.88.10:5000/enviarTraduccion", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://40.117.101.140:5000/enviarTraduccion", form);
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -95,9 +95,9 @@ public class ReceiveResult : MonoBehaviour {
         form.AddField("tipo", "profesor");
         form.AddField("accion", "terminar");
         form.AddField("correo", "loquesea");
-        SSTools.ShowMessage("entre al resquest", SSTools.Position.bottom, SSTools.Time.twoSecond);
+        SSTools.ShowMessage("Nos vemos", SSTools.Position.bottom, SSTools.Time.twoSecond);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://137.135.88.10:5000/clase", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://40.117.101.140:5000/clase", form);
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)

@@ -59,21 +59,18 @@ public class RegistroAlumno : MonoBehaviour
         }
         else
         {
-
-            SSTools.ShowMessage("Ningún campo puede estar vacio o escribe un correo válido", SSTools.Position.bottom, SSTools.Time.threeSecond);
-
-        }
+            SSTools.ShowMessage("Campo vació o Email incorrecto", SSTools.Position.bottom, SSTools.Time.threeSecond);
+         }
     }
     IEnumerator Upload(string Email,string name, string apellidoP, string apellidoM)
     {
-
         WWWForm form = new WWWForm();
         form.AddField("nombre", name);
         form.AddField("apellidoP", apellidoP);
         form.AddField("apellidoM", apellidoM);
         form.AddField("correo", Email);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://137.135.88.10:5000/registroAlumno", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://40.117.101.140:5000/registroAlumno", form);
 
         yield return www.SendWebRequest();
 

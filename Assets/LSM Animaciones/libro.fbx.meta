@@ -698,7 +698,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01c
       parentName: Left_Index_Finger_Joint_01b
       position: {x: -0.0000000333786, y: 0.022945117, z: 0.0000000023841857}
-      rotation: {x: 0.00025226807, y: 0.011017146, z: 0.022884404, w: 0.99967736}
+      rotation: {x: 0.0002522681, y: 0.011017146, z: 0.022884406, w: 0.99967736}
       scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
     - name: Left_Index_Finger_Joint_01c_end
       parentName: Left_Index_Finger_Joint_01c
@@ -708,7 +708,7 @@ ModelImporter:
     - name: Left_Middle_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: -0.0024095534, y: 0.07299717, z: 0.0018620443}
-      rotation: {x: 0.029849965, y: 0.097263195, z: -0.0622695, w: 0.9928602}
+      rotation: {x: 0.029849967, y: 0.097263195, z: -0.062269505, w: 0.9928602}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Left_Middle_Finger_Joint_01b
       parentName: Left_Middle_Finger_Joint_01a
@@ -748,7 +748,7 @@ ModelImporter:
     - name: Left_Ring_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: 0.0017881822, y: 0.071700945, z: 0.02129324}
-      rotation: {x: 0.029438086, y: 0.09731, z: -0.062287454, w: 0.99286675}
+      rotation: {x: 0.029438086, y: 0.09731001, z: -0.062287454, w: 0.9928668}
       scale: {x: 1, y: 1.0000002, z: 0.99999994}
     - name: Left_Ring_Finger_Joint_01b
       parentName: Left_Ring_Finger_Joint_01a
@@ -813,7 +813,7 @@ ModelImporter:
     - name: Right_Wrist_Joint_01
       parentName: Right_Forearm_Joint_01
       position: {x: -0.000000014305114, y: 0.30775818, z: -0.000000009536743}
-      rotation: {x: 0.066273294, y: -0.7210721, z: -0.019082919, w: 0.68941927}
+      rotation: {x: 0.06627329, y: -0.721072, z: -0.019082917, w: 0.6894192}
       scale: {x: 0.99999994, y: 1, z: 0.9999999}
     - name: Right_Index_Finger_Joint_01a
       parentName: Right_Wrist_Joint_01
@@ -903,7 +903,7 @@ ModelImporter:
     - name: Right_Thumb_Joint_01b
       parentName: Right_Thumb_Joint_01a
       position: {x: 0.000000076293944, y: 0.028925657, z: 0.000000032186506}
-      rotation: {x: 0.007642756, y: 0.23707832, z: 0.027550472, w: 0.9710697}
+      rotation: {x: 0.0076427567, y: 0.23707834, z: 0.027550474, w: 0.97106975}
       scale: {x: 0.9999998, y: 1, z: 1}
     - name: Right_Thumb_Joint_01b_end
       parentName: Right_Thumb_Joint_01b

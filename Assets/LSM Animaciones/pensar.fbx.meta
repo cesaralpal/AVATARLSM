@@ -704,7 +704,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01c
       parentName: Left_Index_Finger_Joint_01b
       position: {x: 0.000000038146972, y: 0.02294517, z: -0.000000019073486}
-      rotation: {x: 0.00025227253, y: 0.011017149, z: 0.02288443, w: 0.99967736}
+      rotation: {x: 0.00025227256, y: 0.011017149, z: 0.022884432, w: 0.99967736}
       scale: {x: 1, y: 0.9999999, z: 1.0000001}
     - name: Left_Index_Finger_Joint_01c_end
       parentName: Left_Index_Finger_Joint_01c
@@ -779,7 +779,7 @@ ModelImporter:
     - name: Left_Thumb_Joint_01b
       parentName: Left_Thumb_Joint_01a
       position: {x: -0.000000028610229, y: 0.02892538, z: 0}
-      rotation: {x: -0.0097959135, y: -0.7743918, z: -0.018180568, w: 0.6323694}
+      rotation: {x: -0.009795913, y: -0.7743918, z: -0.018180566, w: 0.6323694}
       scale: {x: 0.99999994, y: 1.0000001, z: 0.9999998}
     - name: Left_Thumb_Joint_01b_end
       parentName: Left_Thumb_Joint_01b

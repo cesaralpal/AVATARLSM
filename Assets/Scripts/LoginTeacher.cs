@@ -53,7 +53,7 @@ public class LoginTeacher: MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("correo", Email);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://137.135.88.10:5000/codigo", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://40.117.101.140:5000/codigo", form);
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)

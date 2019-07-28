@@ -141,6 +141,7 @@ ModelImporter:
     2100000: Robot
     4300000: Robot2
     7400000: Armature|muchos
+    7400002: Armature|mucho
     9500000: //RootNode
     10800000: Lamp
     13700000: Robot2
@@ -684,7 +685,7 @@ ModelImporter:
     - name: Left_Forearm_Joint_01
       parentName: Left_Upper_Arm_Joint_01
       position: {x: 0.00000014424323, y: 0.24097757, z: 0.0000000077486035}
-      rotation: {x: -0.016615301, y: 0.27926752, z: -0.014293269, w: 0.95996314}
+      rotation: {x: -0.016615301, y: 0.27926755, z: -0.014293269, w: 0.9599632}
       scale: {x: 0.99999994, y: 1, z: 1.0000001}
     - name: Left_Wrist_Joint_01
       parentName: Left_Forearm_Joint_01
@@ -694,7 +695,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: -0.006901493, y: 0.07312519, z: -0.01815898}
-      rotation: {x: 0.0296087, y: 0.0972903, z: -0.062281, w: 0.99286413}
+      rotation: {x: 0.029608693, y: 0.0972903, z: -0.062280986, w: 0.99286413}
       scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
     - name: Left_Index_Finger_Joint_01b
       parentName: Left_Index_Finger_Joint_01a
@@ -704,7 +705,7 @@ ModelImporter:
     - name: Left_Index_Finger_Joint_01c
       parentName: Left_Index_Finger_Joint_01b
       position: {x: 0.000000019073486, y: 0.022945136, z: 0.000000047683713}
-      rotation: {x: 0.00025228361, y: 0.011017133, z: 0.022884425, w: 0.99967736}
+      rotation: {x: 0.00025228367, y: 0.011017133, z: 0.022884429, w: 0.99967736}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Left_Index_Finger_Joint_01c_end
       parentName: Left_Index_Finger_Joint_01c
@@ -714,7 +715,7 @@ ModelImporter:
     - name: Left_Middle_Finger_Joint_01a
       parentName: Left_Wrist_Joint_01
       position: {x: -0.0024095916, y: 0.07299705, z: 0.0018620681}
-      rotation: {x: 0.029849432, y: 0.097263046, z: -0.06226977, w: 0.9928602}
+      rotation: {x: 0.029849434, y: 0.09726305, z: -0.062269773, w: 0.99286026}
       scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
     - name: Left_Middle_Finger_Joint_01b
       parentName: Left_Middle_Finger_Joint_01a
@@ -820,7 +821,7 @@ ModelImporter:
     - name: Right_Wrist_Joint_01
       parentName: Right_Forearm_Joint_01
       position: {x: 0.000000014305114, y: 0.30775845, z: -0.00000004053116}
-      rotation: {x: 0.061810724, y: -0.7211761, z: -0.014750906, w: 0.68983096}
+      rotation: {x: 0.061810732, y: -0.72117615, z: -0.014750908, w: 0.689831}
       scale: {x: 1, y: 1.0000001, z: 0.9999999}
     - name: Right_Index_Finger_Joint_01a
       parentName: Right_Wrist_Joint_01

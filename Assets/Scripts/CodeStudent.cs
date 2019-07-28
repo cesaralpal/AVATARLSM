@@ -49,7 +49,7 @@ public class CodeStudent : MonoBehaviour
 
         if (Codigo == "" || Email == "")
         {
-            SSTools.ShowMessage("No dejes ningún campo vació", SSTools.Position.bottom, SSTools.Time.threeSecond);
+            SSTools.ShowMessage("campo vació", SSTools.Position.bottom, SSTools.Time.threeSecond);
 
         }
         else if (validateEmail(Email) && Codigo != "") {
@@ -69,7 +69,7 @@ public class CodeStudent : MonoBehaviour
         form.AddField("accion", "entrar");
         form.AddField("correo", Email);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://137.135.88.10:5000/clase", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://40.117.101.140:5000/clase", form);
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -86,7 +86,7 @@ public class CodeStudent : MonoBehaviour
                 SceneManager.LoadScene("Avatar");
             }
             else {
-                SSTools.ShowMessage("Tu código no esta asociado a ningun maestro",SSTools.Position.bottom,SSTools.Time.threeSecond);
+                SSTools.ShowMessage("Código no válido",SSTools.Position.bottom,SSTools.Time.threeSecond);
 
             }
         }
