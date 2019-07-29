@@ -19,6 +19,8 @@ public class Kylelsm : MonoBehaviour
     public GameObject btnEnd;
     public Button btnTerminar;
 
+    public float transitionNormalizedTime = 0.25f;
+
     void Start()
     {
 
@@ -158,7 +160,7 @@ public class Kylelsm : MonoBehaviour
         animLSM.Add("sin traduccion", "sin traduccion");
 
     }
-
+    //TODO: remover para que no ocupe ciclos extra
     void Update()
     {
 
@@ -175,11 +177,11 @@ public class Kylelsm : MonoBehaviour
         {          
                 for (int i = 0; i <= movimientos.Length - 1; i++)
                 {
-
+                //TODO: si hacen lo mismo poner le if nos quita performance
                     if (i != 0)
                     {
                         yield return StartCoroutine(AvatarMov(movimientos[i]));
-                }
+                    }
                     else
                     {
                         yield return StartCoroutine(AvatarMov(movimientos[i]));
@@ -188,14 +190,16 @@ public class Kylelsm : MonoBehaviour
             Debug.Log("sali del for");
             StartCoroutine(SolicitarTraduccion());
         }
-
         else
         {
-            anim.Play("sin traduccion");
+            Debug.Log("No movs");
+            //anim.Play("sin traduccion");
+            anim.CrossFadeInFixedTime("sin traduccion", transitionNormalizedTime);
             StartCoroutine(SolicitarTraduccion());
 
         }
     }
+    
 
     IEnumerator AvatarMov(string mov)
     {
@@ -207,11 +211,28 @@ public class Kylelsm : MonoBehaviour
             string animName = "";
             if (animLSM.TryGetValue(mov, out animName))
             {
-                anim.Play(animName, 0,0f);
-                yield return 0;
-                m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-                yield return new WaitForSeconds(m_CurrentClipInfo[0].clip.length);
+                //este chequeo es por si la primera vz no tiene ninguna animacion
 
+                m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                if (m_CurrentClipInfo.Length > 0)
+                {
+                    anim.CrossFadeInFixedTime(animName, transitionNormalizedTime);
+                    yield return 0;
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    float secondsToWait = m_CurrentClipInfo[0].clip.length;
+                    Debug.LogWarningFormat("Waiting:{0} seconds for clip:{1}", secondsToWait, m_CurrentClipInfo[0].clip.name);
+                    yield return new WaitForSeconds(secondsToWait);
+                }
+               else
+                {
+                    //Como no tiene animacion no hay que hacer crossfade, solo play
+                    anim.Play(animName);
+                    yield return 0;
+                    m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
+                    float secondsToWait = m_CurrentClipInfo[0].clip.length;
+                    Debug.LogWarningFormat("first Waiting:{0} seconds for clip:{1}", secondsToWait, m_CurrentClipInfo[0].clip.name);
+                    yield return new WaitForSeconds(secondsToWait);
+                }
 
             }
             else 
@@ -222,10 +243,14 @@ public class Kylelsm : MonoBehaviour
 
                 if (tiempo > 0.95f)
                 {
-                    anim.Play("sin traduccion");
+                    //este codigo estaba esperando m_CurrentClipInfo.length; *(que es el tama;o del arreglo y no del clip) en lugar de m_CurrentClipInfo[0].clip.length;
+                    //anim.Play("sin traduccion");S
+                    anim.CrossFadeInFixedTime("sin traduccion", transitionNormalizedTime);
+                    yield return 0;
                     m_CurrentClipInfo = this.anim.GetCurrentAnimatorClipInfo(0);
-
-                    yield return new WaitForSeconds(m_CurrentClipInfo.Length);
+                    float secondsToWait = m_CurrentClipInfo[0].clip.length;
+                    Debug.LogWarningFormat("Waiting sin trad:{0} seconds", secondsToWait);
+                    yield return new WaitForSeconds(secondsToWait);
                 }
                 else
                 {
